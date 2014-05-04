@@ -7,7 +7,7 @@ Body Styling
 * bg.png file for background
 ========= */
 body {
-	background: url("../img/bg.png");
+	background: url("../img/bg_opttimize.png");
 	color: #fff;
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 }
@@ -22,80 +22,80 @@ Blockquote
 * text aligned center
 ========= */
 blockquote {
-	color: #e44d26;
-	font-size: 2em;
-	font-style: italic;
-	letter-spacing: 1px;
-	text-align: center; 
-}
+  color: #e44d26;
+  font-size: 2em;
+  font-style: italic;
+  letter-spacing: 1px;
+  text-align: center; }
 
 /* =========
-Navigation
+*Navigation
 * List Items - Navigation provided
 
-Anchor Links
+*Anchor Links
 * padding: 10px 10px 10px 40px;
 * color on hover #E44D26
 ========= */
-nav li {
-	float: left;
-	list-style: none;
-	margin: 0 10px 0 10px;
-}
-
 /* Base link styling */
-nav a:link, 
-nav a:visited {
-	color: #fff;
+nav ul li {
+	list-style-type: none;
+	float: left;
+	margin-left: 20px;
+}
+nav ul li a {
+	background-image: url("../img/icons/icons_sprite.png");
+	background-repeat: no-repeat;
+	background-position: 0 -120px;
 	padding: 10px 10px 10px 40px;
-	text-decoration: none;
-	text-transform: uppercase;
+	display: block;
+	height: 25px;
+	&:link, &:visited { 
+		color: #FFF;
+	  text-decoration: none;
+	  text-transform: uppercase;
+	}
+	&:hover {
+		color: #e44d26;
+	}
 }
-
-nav a:hover, 
-nav a:active {
-	color: #E44D26;
+@each $navname in home, super, html5 {
+  	##{$navname} a:hover {
+	  	@if $navname == home {
+  		background-position: 0 5px;
+  	}
+  	@if $navname == super {
+  		background-position: 0 -38px;
+  	}
+  	@if $navname == html5 {
+  		background-position: 0 -80px;
+  	}
+  }
 }
-
-/* on hover show home.png */
-#home a:hover {
-	background: url("../img/icons/home.png") no-repeat left center;
-}
-
-/* on hover show home.png */
-#super a:hover {
-	background: url("../img/icons/super.png") no-repeat left center;
-}
-
-/* on hover show home.png */
-#html5 a:hover {
-	background: url("../img/icons/html5.png") no-repeat left center;
-}
-
-/* =========
-Super Friends
-* font-family: 'Open Sans', sans-serif;
-* text-indent: 32px;
-* line-height: 24px;
-========= */
-h3 {
-	font-family: 'Open Sans', sans-serif;
-}
-
 article img {
-	border: 10px solid #fff;
+  border: 10px solid #fff;
 }
-
-img + p {
-	line-height: 24px;
-	text-indent: 32px;
+.grid_3 img {
+		background-image: url("../img/icons/bio_pix.jpg");
+		background-repeat: no-repeat;
+		padding: 0 0 0 200px;
+		display: block;
+		height: 190px;
+		background-position: 0 0;
 }
-
-/* =========
-Footer
-* arial font for paragraphs
-========= */
-footer p {
-	font: 10px/16px 'arial', sans-serif;
+@each $name in zeldman, meyer, sullivan, marcotte {
+  	##{$name} img {
+	  	@if $name == zeldman {
+  		background-position: 0 0;
+  	}
+  	@if $name == meyer {
+  		background-position: 0 -220px;
+  	}
+  	@if $name == sullivan {
+  		background-position: 0 -440px;
+  	}
+  	@if $name == marcotte {
+  		background-position: 0 -660px;
+  	}
+  }
 }
 
